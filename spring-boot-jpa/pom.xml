@@ -28,14 +28,8 @@
 			<version>0.0.1</version>
 		</dependency>
 		<dependency>
-			<groupId>com.jachs</groupId>
-			<artifactId>MyEntity</artifactId>
-			<version>1.0</version>
-		</dependency>
-		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<version>3.11</version>
 		</dependency>
 
 		<dependency>
@@ -50,8 +44,4 @@
 			</exclusions>
 		</dependency>
 	</dependencies>
-	<!-- <build> <resources> <resource> <directory>${basedir}/</directory> <targetPath>target/classes</targetPath> 
-		<filtering>true</filtering> <includes> <include>c3p0.properties</include> 
-		<include>dbcp2.properties</include> <include>druid.properties</include> <include>/*</include> 
-		</includes> </resource> </resources> </build> -->
 </project>
