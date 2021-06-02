@@ -1,0 +1,45 @@
+package com.jachs.database.jpa.oto.add;
+
+import java.util.Random;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.jachs.database.jpa.dao.oto.StudentCardRepository;
+import com.jachs.database.jpa.entity.oto.StudentCard;
+
+/**
+ * @author zhanchaohan
+ * 
+ */
+@SpringBootTest
+public class StudentCardTest {
+	@Autowired
+	private StudentCardRepository studentCardRepository;
+
+	@Test
+	public void testAddOne() {
+		StudentCard sc = new StudentCard();
+		sc.setCardId("cId");
+		sc.setCardMonery(598475L);
+		sc.setCardType("学生卡");
+		studentCardRepository.save(sc);
+	}
+
+	@Test
+	public void testAddLoop() {
+		Random random = new Random();
+		int type=0;
+		for (int kk = 0; kk < 100; kk++) {
+			StudentCard sc = new StudentCard();
+			sc.setCardId("cId" + kk);
+			sc.setCardMonery(random.nextLong() * 500);
+			if(kk%10==0) {
+				type++;
+			}
+			sc.setCardType("学生卡" + type);
+			studentCardRepository.save(sc);
+		}
+	}
+}

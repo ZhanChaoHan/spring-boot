@@ -1,10 +1,9 @@
-package com.jachs.database.jpa.oto;
+package com.jachs.database.jpa.oto.add;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.jachs.database.jpa.dao.oto.StudentCardRepository;
 import com.jachs.database.jpa.dao.oto.StudentRepository;
 import com.jachs.database.jpa.entity.oto.Student;
 import com.jachs.database.jpa.entity.oto.StudentCard;
