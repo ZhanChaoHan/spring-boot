@@ -2,6 +2,7 @@ package com.jachs.database.jpa.oto.add;
 
 import java.util.Random;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -24,12 +25,14 @@ public class StudentCardTest {
 		sc.setCardId("cId");
 		sc.setCardMonery(598475L);
 		sc.setCardType("学生卡");
+		sc.setCardName("CAZNAME");
 		studentCardRepository.save(sc);
 	}
 
 	@Test
 	public void testAddLoop() {
 		Random random = new Random();
+		RandomStringUtils rsu=new RandomStringUtils();
 		int type=0;
 		for (int kk = 0; kk < 100; kk++) {
 			StudentCard sc = new StudentCard();
@@ -39,6 +42,7 @@ public class StudentCardTest {
 				type++;
 			}
 			sc.setCardType("学生卡" + type);
+			sc.setCardName(rsu.random ( 4, "卡名称随机字符串"));
 			studentCardRepository.save(sc);
 		}
 	}

@@ -32,12 +32,12 @@ public class MyClass {
      */
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name = "ClassId")
-    private int ClassId;
-    @Column(name = "ClassType", nullable = true, length = 2)
-    private int ClassType;
-    @Column(name = "ClassName", nullable = true, length = 20)
-    private String ClassName;
+    @Column(name = "classId")
+    private int classId;
+    @Column(name = "classType", nullable = true, length = 2)
+    private int classType;
+    @Column(name = "className", nullable = true, length = 20)
+    private String className;
     
 //    @OneToMany(mappedBy="class")
 //    private List<MyStudent> MyStudent=new ArrayList<MyStudent>();

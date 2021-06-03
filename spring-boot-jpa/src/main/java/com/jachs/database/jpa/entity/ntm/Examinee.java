@@ -21,11 +21,11 @@ import lombok.Data;
 @Table(name="Examinee")
 public class Examinee {
     @Id
-    private Integer ExamineeId;//考生ID
-    @Column(name = "ExamineeName")
-    private String ExamineeName;//考生名字
+    private Integer examineeId;//考生ID
+    @Column(name = "examineeName")
+    private String examineeName;//考生名字
     
     @ManyToMany
     @JoinTable
-    private Set<Exam>Exams;
+    private Set<Exam>exams;
 }

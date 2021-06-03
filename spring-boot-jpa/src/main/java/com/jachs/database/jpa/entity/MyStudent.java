@@ -24,8 +24,8 @@ import lombok.Data;
 public class MyStudent {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name = "StudentId")
-    private int StudentId;
+    @Column(name = "studentId")
+    private int studentId;
     /***
      * FetchType.LAZY:延迟获取数据
      * FetchType.EAGER:立即获取数据
@@ -38,15 +38,15 @@ public class MyStudent {
      */
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE, targetEntity = MyClass.class,optional=true)
     @JoinColumn(name = "classid")
-    private MyClass MyClass;
+    private MyClass myClass;
     
     
-    @Column(name = "StudentAge", nullable = true, length = 3)
-    private int StudentAge;
-    @Column(name = "StudentGender", nullable = true, length = 1)
-    private int StudentGender;
-    @Column(name = "StudentName", nullable = true, length = 5)
-    private String StudentName;
+    @Column(name = "studentAge", nullable = true, length = 3)
+    private int studentAge;
+    @Column(name = "studentGender", nullable = true, length = 1)
+    private int studentGender;
+    @Column(name = "studentName", nullable = true, length = 5)
+    private String studentName;
     
     
 }

@@ -20,10 +20,10 @@ import lombok.Data;
 public class Player {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long PlayerId;
+    private Long playerId;
     
-    @Column(name = "PlayerUserName")
-    private String PlayerUserName;
-    @Column(name = "Level")
-    private Integer Level;
+    @Column(name = "playerUserName")
+    private String playerUserName;
+    @Column(name = "level")
+    private Integer level;
 }

@@ -20,14 +20,14 @@ import lombok.Data;
 @Table(name="Exam")
 public class Exam {
     @Id
-    private Integer ExamId;//考试ID
-    @Column(name = "ExamName")
-    private String ExamName;//考试名称
-    @Column(name = "Score")
-    private Double Score;//考试得分
+    private Integer examId;//考试ID
+    @Column(name = "examName")
+    private String examName;//考试名称
+    @Column(name = "score")
+    private Double score;//考试得分
     
     @ManyToMany
     @JoinTable
-    private Set<Examinee>Examinees;
+    private Set<Examinee>examinees;
     
 }

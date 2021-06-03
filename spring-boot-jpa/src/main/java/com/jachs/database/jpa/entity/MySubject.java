@@ -24,15 +24,15 @@ import lombok.Data;
 public class MySubject {
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int SubjectId;
+    private int subjectId;
 	
 	
-	@Column(name = "SubjectName", nullable = true, length = 5)
-    private String SubjectName;
+	@Column(name = "subjectName", nullable = true, length = 5)
+    private String subjectName;
 	
 	@ManyToMany
 	@JoinTable()
-	private List<MyStudent>MyStudentList;
+	private List<MyStudent>myStudentList;
 
 	
 }

@@ -21,13 +21,13 @@ import lombok.Data;
 @Table(name="Computer")
 public class Computer {
     @Id
-    private String ComputerId;
+    private String computerId;
     
-    @Column(name = "ComputerName")
-    private String ComputerName;
-    @Column(name = "ComputerPrice")
-    private Long ComputerPrice;
+    @Column(name = "computerName")
+    private String computerName;
+    @Column(name = "computerPrice")
+    private Long computerPrice;
     
-    @OneToMany(targetEntity = SoftWare.class,mappedBy = "CId",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-    private Set<SoftWare> SoftWares;
+    @OneToMany(targetEntity = SoftWare.class,mappedBy = "cId",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    private Set<SoftWare> softWares;
 }

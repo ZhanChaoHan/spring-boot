@@ -16,11 +16,11 @@ import lombok.Data;
 @Table(name="SoftWare")
 public class SoftWare {
     @Id
-    private String SoftWareId;
+    private String softWareId;
     
-    @Column(name = "CId")
-    private String CId;
-    @Column(name = "SoftWareName")
-    private String SoftWareName;
+    @Column(name = "cId")
+    private String cId;
+    @Column(name = "softWareName")
+    private String softWareName;
     
 }

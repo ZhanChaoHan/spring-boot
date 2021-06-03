@@ -9,5 +9,5 @@ import com.jachs.database.jpa.entity.oto.StudentCard;
  * 
  */
 public interface StudentCardRepository extends JpaRepository<StudentCard,String>{
-
+	StudentCard findBycardName(String XXX);
 }

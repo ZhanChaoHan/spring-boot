@@ -21,13 +21,13 @@ import lombok.Data;
 public class VideoGame {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long GameId;
+    private Long gameId;
     
-    @Column(name = "GameName")
-    private String GameName;
-    @Column(name = "GamePrice")
-    private Integer GamePrice;
+    @Column(name = "gameName")
+    private String gameName;
+    @Column(name = "gamePrice")
+    private Integer gamePrice;
     
     @ManyToOne(targetEntity = Player.class,optional = true)
-    private Player Player;
+    private Player player;
 }

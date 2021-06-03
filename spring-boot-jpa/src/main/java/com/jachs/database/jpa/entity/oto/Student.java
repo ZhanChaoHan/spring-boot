@@ -20,13 +20,13 @@ import lombok.Data;
 @Table(name="Student")
 public class Student {
     @Id
-    private String StudentId;
-    @Column(name = "StudentName")
-    private String StudentName;
-    @Column(name = "StudentAge")
-    private int StudentAge;
+    private String studentId;
+    @Column(name = "studentName")
+    private String studentName;
+    @Column(name = "studentAge")
+    private int studentAge;
     
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "sCart")
-    private StudentCard StudentCard;
+    private StudentCard studentCard;
 }

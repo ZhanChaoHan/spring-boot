@@ -27,14 +27,14 @@ public class Example {
     private int Id;
 	
 	@OneToOne(optional = false)
-	@JoinColumn(name="MyStudentId",referencedColumnName="StudentId")
-    private MyStudent MyStudent;
+	@JoinColumn(name="myStudentId",referencedColumnName="StudentId")
+    private MyStudent myStudent;
 	
 	@OneToOne(optional = false)
-	@JoinColumn(name="MySubjectId",referencedColumnName="SubjectId")
-    private MySubject MySubject;
+	@JoinColumn(name="mySubjectId",referencedColumnName="SubjectId")
+    private MySubject mySubject;
     
     
-    @Column(name = "Score", nullable = true, length = 3)
-    private int Score;
+    @Column(name = "score", nullable = true, length = 3)
+    private int score;
 }
