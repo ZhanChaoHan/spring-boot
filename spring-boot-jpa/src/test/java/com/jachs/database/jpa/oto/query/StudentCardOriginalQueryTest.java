@@ -12,7 +12,7 @@ import com.jachs.database.jpa.entity.oto.StudentCard;
 /***
  * 原生SQL查询
  * @author zhanchaohan
- *
+ * @see https://docs.spring.io/spring-data/jpa/docs/2.5.1/reference/html/#query-by-example
  */
 @SpringBootTest
 public class StudentCardOriginalQueryTest {

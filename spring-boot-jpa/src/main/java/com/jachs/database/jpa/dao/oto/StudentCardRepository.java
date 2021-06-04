@@ -8,6 +8,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import com.jachs.database.jpa.entity.oto.StudentCard;
 
@@ -15,6 +16,7 @@ import com.jachs.database.jpa.entity.oto.StudentCard;
  * @author zhanchaohan
  * 
  */
+@Repository
 public interface StudentCardRepository extends JpaRepository<StudentCard,String>{
 	StudentCard findBycardName(String XXX);
 
