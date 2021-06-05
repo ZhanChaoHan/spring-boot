@@ -1,15 +1,12 @@
 package com.jachs.database.jpa.oto.add;
 
 import java.util.Random;
-
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.test.context.ContextConfiguration;
 
+import com.jachs.database.jpa.SpringBootJpaApplication;
 import com.jachs.database.jpa.dao.oto.StudentCardRepository;
 import com.jachs.database.jpa.entity.oto.StudentCard;
 
@@ -17,10 +14,7 @@ import com.jachs.database.jpa.entity.oto.StudentCard;
  * @author zhanchaohan
  * 
  */
-@SpringBootTest
-@EnableJpaRepositories(basePackages = "com.jachs.database.jpa.dao")
-@ComponentScan(basePackages = "com.jachs.database.jpa.entity")
-@ContextConfiguration(locations = {"classpath:/applicationContext-web.xml"})
+@SpringBootTest(classes = SpringBootJpaApplication.class)
 public class StudentCardTest {
 	@Autowired
 	private StudentCardRepository studentCardRepository;
