@@ -1,5 +1,7 @@
 package com.jachs.database.jpa.entity.oto;
 
+import java.util.Date;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,6 +27,8 @@ public class Student {
     private String studentName;
     @Column(name = "studentAge")
     private int studentAge;
+    @Column(name = "dateOfBirth")
+    private Date dateOfBirth;
     
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "sCart")
