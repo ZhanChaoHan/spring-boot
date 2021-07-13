@@ -1,5 +1,6 @@
 package com.jachs.database.jpa.entity.otn;
 
+import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -9,6 +10,8 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
 
@@ -25,6 +28,11 @@ public class Computer {
     
     @Column(name = "computerName")
     private String computerName;
+    
+    @Column(name = "madeTime")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date madeTime;
+    
     @Column(name = "computerPrice")
     private Long computerPrice;
     

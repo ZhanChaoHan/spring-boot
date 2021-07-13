@@ -1,5 +1,6 @@
 package com.jachs.database.jpa.otn;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -27,7 +28,7 @@ public class ComputerTest {
         computer.setComputerId ( "C1" );
         computer.setComputerName ( "微软" );
         computer.setComputerPrice ( 123456L );
-       
+        computer.setMadeTime(new Date());
         
         computerRepository.save ( computer );
     }
@@ -41,6 +42,7 @@ public class ComputerTest {
         computer.setComputerId ( "C1" );
         computer.setComputerName ( "微软" );
         computer.setComputerPrice ( 123456L );
+        computer.setMadeTime(new Date());
         cList.add ( computer );
         
         Computer computer1=new Computer();
@@ -48,6 +50,7 @@ public class ComputerTest {
         computer1.setComputerId ( "C2" );
         computer1.setComputerName ( "联想" );
         computer1.setComputerPrice ( 3456L );
+        computer1.setMadeTime(new Date());
         cList.add ( computer1 );
         
         Computer computer2=new Computer();
@@ -55,6 +58,7 @@ public class ComputerTest {
         computer2.setComputerId ( "C3" );
         computer2.setComputerName ( "神州" );
         computer2.setComputerPrice ( 79908L );
+        computer2.setMadeTime(new Date());
         cList.add ( computer2 );
         
         computerRepository.saveAll ( cList );
