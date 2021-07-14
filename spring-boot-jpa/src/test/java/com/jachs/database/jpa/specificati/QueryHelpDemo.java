@@ -2,6 +2,7 @@ package com.jachs.database.jpa.specificati;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import com.jachs.database.jpa.SpringBootJpaApplication;
 import com.jachs.database.jpa.dao.otn.ComputerRepository;
 import com.jachs.database.jpa.dao.otn.SoftWareRepository;
 import com.jachs.database.jpa.entity.otn.Computer;
+import com.jachs.database.jpa.entity.otn.SoftWare;
 import com.jachs.database.jpa.specificati.query_entity.ComputerDto;
 import com.jachs.database.jpa.utill.QueryHelp;
 
@@ -75,7 +77,13 @@ public class QueryHelpDemo {
 				.findAll((root, criteriaQuery, criteriaBuilder) -> QueryHelp.getPredicate(root, cd, criteriaBuilder));
 
 		for (Computer computer : systemUserList) {
+			Set<SoftWare>sw=computer.getSoftWares();
+			
 			System.out.println(computer.getComputerId() + "\t" + computer.getComputerName());
+			
+			for (SoftWare sws : sw) {
+				System.out.println(sws.getCId());
+			}
 		}
 	}
 	@Test
@@ -90,7 +98,7 @@ public class QueryHelpDemo {
 		for (Computer computer : systemUserList) {
 			System.out.println(computer.getComputerId() + "\t" + computer.getComputerName());
 		}
-		
+		 
 	}
 	
 }

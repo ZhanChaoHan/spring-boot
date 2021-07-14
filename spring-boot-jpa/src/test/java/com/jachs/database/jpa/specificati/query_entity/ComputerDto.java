@@ -25,7 +25,6 @@ public class ComputerDto {
     @Query(type = Query.Type.BETWEEN)
     private List<String> madeTime;
 
+    @Query(joinName = "softWares",propName = "cId")
     private String cId;
-    @Query(propName = "cId", type = Query.Type.EQUAL, joinName = "computerId")
-    private List<SoftWare> swList;
 }
