@@ -1,10 +1,9 @@
 package com.jachs.database.jpa.specificati.query_entity;
 
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
+import com.jachs.database.jpa.entity.otn.SoftWare;
 import com.jachs.database.jpa.utill.Query;
 
 import lombok.Data;
@@ -26,6 +25,7 @@ public class ComputerDto {
     @Query(type = Query.Type.BETWEEN)
     private List<String> madeTime;
 
-//    @Query(propName = "id", type = Query.Type.IN, joinName = "dept")
-//    private Set<Long> deptIds = new HashSet<>();
+    private String cId;
+    @Query(propName = "cId", type = Query.Type.EQUAL, joinName = "computerId")
+    private List<SoftWare> swList;
 }
