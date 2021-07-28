@@ -2,6 +2,7 @@ package com.jachs.database.jpa.oto.add;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
@@ -52,7 +53,29 @@ public class StudentTest {
 		s.setStudentCard(sc);
 		studentRepository.save(s);
 	}
-
+	@Test
+	public void saveRelation() {
+		RandomStringUtils rsu=new RandomStringUtils();
+		
+		for (int kk = 0; kk < 50; kk++) {
+			Student s = new Student();
+			
+			s.setStudentId(rsu.randomAlphabetic(10));
+			s.setStudentName(rsu.randomAlphabetic(3));
+			s.setStudentAge(kk);
+			s.setDateOfBirth(new Date());
+			
+			StudentCard sc = new StudentCard();
+			sc.setCardId(rsu.randomAlphabetic(10));
+			sc.setCardName(rsu.random(3, "皮皮虾打篮球"));
+			sc.setCardMonery(new Long(kk));
+			sc.setCardType(rsu.randomAlphabetic(3));
+			
+			s.setStudentCard(sc);
+			studentRepository.save(s);
+		}
+	}
+	
 	@Test
 	public void saveMany() {
 		List<Student>allS=new ArrayList<Student>();
@@ -64,7 +87,7 @@ public class StudentTest {
 			Student s = new Student();
 			
 			s.setStudentId(rsu.randomAlphabetic(255));
-			s.setStudentName(rsu.randomAlphabetic(255));
+			s.setStudentName(rsu.random(3, "王阿达瓦李达瓦女兆基借记孔垂楠成交价收到货"));
 			s.setStudentAge(rd.nextInt());
 			s.setDateOfBirth(du.addDays(da, rd.nextInt(50)));
 			

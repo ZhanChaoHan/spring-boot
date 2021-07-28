@@ -25,7 +25,7 @@ import com.jachs.database.jpa.utill.SpecificationFactory;
  *
  */
 @SpringBootTest
-public class StudentSpecificationExecutorTest {
+public class SpecificationFactoryTest {
 	@Autowired
 	private StudentJpaSpecificationExecutorRepository studentJpaSpecificationExecutor;
 

@@ -9,7 +9,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.lang.reflect.Field;
 import java.util.*;
 
-@Slf4j
+//@Slf4j
 @SuppressWarnings({ "unchecked", "all" })
 public class QueryHelp {
 
@@ -138,7 +138,7 @@ public class QueryHelp {
 				field.setAccessible(accessible);
 			}
 		} catch (Exception e) {
-			log.error(e.getMessage(), e);
+//			log.error(e.getMessage(), e);
 		}
 		int size = list.size();
 		return cb.and(list.toArray(new Predicate[size]));

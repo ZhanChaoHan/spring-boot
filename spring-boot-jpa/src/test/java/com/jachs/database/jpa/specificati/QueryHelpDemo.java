@@ -17,7 +17,7 @@ import com.jachs.database.jpa.dao.otn.ComputerRepository;
 import com.jachs.database.jpa.dao.otn.SoftWareRepository;
 import com.jachs.database.jpa.entity.otn.Computer;
 import com.jachs.database.jpa.entity.otn.SoftWare;
-import com.jachs.database.jpa.specificati.query_entity.ComputerDto;
+import com.jachs.database.jpa.entity.otn.dto.ComputerDto;
 import com.jachs.database.jpa.utill.QueryHelp;
 
 /***
@@ -98,7 +98,6 @@ public class QueryHelpDemo {
 		for (Computer computer : systemUserList) {
 			System.out.println(computer.getComputerId() + "\t" + computer.getComputerName());
 		}
-		 
 	}
 	
 }

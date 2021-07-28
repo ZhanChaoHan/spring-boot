@@ -1,9 +1,8 @@
-package com.jachs.database.jpa.specificati.query_entity;
+package com.jachs.database.jpa.entity.otn.dto;
 
 
 import java.util.List;
 
-import com.jachs.database.jpa.entity.otn.SoftWare;
 import com.jachs.database.jpa.utill.Query;
 
 import lombok.Data;
