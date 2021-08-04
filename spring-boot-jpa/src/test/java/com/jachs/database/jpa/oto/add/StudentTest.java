@@ -61,13 +61,13 @@ public class StudentTest {
 			Student s = new Student();
 			
 			s.setStudentId(rsu.randomAlphabetic(10));
-			s.setStudentName(rsu.randomAlphabetic(3));
+			s.setStudentName(rsu.random(3, "王璀璨的看完的你逗我假的就OA皮皮虾打篮球"));
 			s.setStudentAge(kk);
 			s.setDateOfBirth(new Date());
 			
 			StudentCard sc = new StudentCard();
 			sc.setCardId(rsu.randomAlphabetic(10));
-			sc.setCardName(rsu.random(3, "皮皮虾打篮球"));
+			sc.setCardName(rsu.random(3, "手机卡电话卡公交卡充值卡银行卡"));
 			sc.setCardMonery(new Long(kk));
 			sc.setCardType(rsu.randomAlphabetic(3));
 			

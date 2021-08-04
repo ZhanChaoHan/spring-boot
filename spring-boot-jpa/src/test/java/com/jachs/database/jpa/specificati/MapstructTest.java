@@ -31,10 +31,16 @@ public class MapstructTest {
 		}
 	}
 
+	/***
+	 * select s.studentName,sc.cardName,sc.cardMonery from student s</br>
+	 * inner join studentcard sc</br>
+	 * on s.sCart=sc.cardId</br>
+	 * where s.studentName like '%王%'
+	 */
 	@Test
 	public void test1() {
 		StudentDto sd = new StudentDto();
-		sd.setStudentName("fdN");
+		sd.setStudentName("王");
 
 		List<Student> stList = studentJpaSpecificationExecutorRepository
 				.findAll((root, criteriaQuery, criteriaBuilder) -> QueryHelp.getPredicate(root, sd, criteriaBuilder));
@@ -43,11 +49,11 @@ public class MapstructTest {
 
 		print(smList);
 	}
-	
+	//同test1结果一致
 	@Test
 	public void test2() {
-		List<Student> stList = studentJpaSpecificationExecutorRepository.findAll();
-		
+		List<Student> stList = studentJpaSpecificationExecutorRepository.findNameLike("王");
+
 		List<StudentModel> smList = StudentConverter.INSTANCE.stuToListModel(stList);
 
 		print(smList);

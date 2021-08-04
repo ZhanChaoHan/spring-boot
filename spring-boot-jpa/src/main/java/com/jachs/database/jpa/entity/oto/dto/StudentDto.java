@@ -12,6 +12,6 @@ public class StudentDto {
     @Query(type = Query.Type.INNER_LIKE)
     private String studentName;
     
-    @Query(joinName = "studentCard", propName = "cardId",type = Query.Type.INNER_LIKE)
-    private Integer studentId;
+//    @Query(joinName = "studentCard", propName = "cardId",type = Query.Type.INNER_LIKE)
+//    private Integer studentId;
 }
