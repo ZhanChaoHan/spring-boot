@@ -10,5 +10,5 @@ import com.jachs.database.jpa.entity.otn.SoftWare;
  * 
  */
 public interface SoftWareRepository extends JpaRepository<SoftWare,String>,JpaSpecificationExecutor<SoftWare>{
-
+	
 }
