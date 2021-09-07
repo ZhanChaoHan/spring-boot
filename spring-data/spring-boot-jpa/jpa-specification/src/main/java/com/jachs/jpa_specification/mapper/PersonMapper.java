@@ -1,16 +1,18 @@
 package com.jachs.jpa_specification.mapper;
 
+
 import org.mapstruct.Mapper;
-import org.mapstruct.factory.Mappers;
+import org.mapstruct.ReportingPolicy;
+
+import com.jachs.jpa_specification.base.BaseMapper;
+import com.jachs.jpa_specification.entity.oto.Person;
+import com.jachs.jpa_specification.vo.oto.PersonVo;
 
 /***
  * 
  * @author zhanchaohan
  *
  */
-@Mapper
-public interface PersonMapper {
-	PersonMapper INSTANCE=Mappers.getMapper(PersonMapper.class);
-	
-	
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
+public interface PersonMapper extends BaseMapper<PersonVo, Person>{
 }
