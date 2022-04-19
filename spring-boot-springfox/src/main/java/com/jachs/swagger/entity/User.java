@@ -1,12 +1,18 @@
 package com.jachs.swagger.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-/**
- * @Description 用户实体
- **/
+/***
+ * 
+ * @author zhanchaohan
+ *
+ */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class User {
     private String username;
