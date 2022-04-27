@@ -11,8 +11,8 @@
 </div>
 <div>
 	<h3>hello socket</h3>
-	<p>【userId】：<div><input id="userId" name="userId" type="text" value="jachs"></div>
-	<p>【toUserId】：<div><input id="contentText" name="contentText" type="text" value="hello websocket"></div>
+	<p>【用户Id】：<div><input id="userId" name="userId" type="text" value="jachs"></div>
+	<p>【内容】：<div><input id="contentText" name="contentText" type="text" value="hello websocket"></div>
 	<p>操作:<div><button onclick="openSocket()">开启socket</button></div>
 	<p>【操作】：<div><button onclick="sendMessage()">发送消息</button></div>
 </div>
@@ -37,6 +37,7 @@
             //打开事件
             socket.onopen = function() {
                 console.log("websocket已打开");
+                $("#userId").attr("disabled","disabled");
                 //socket.send("这是来自客户端的消息" + location.href + new Date());
             };
             //获得消息事件
@@ -60,13 +61,11 @@
         if(typeof(WebSocket) == "undefined") {
             console.log("您的浏览器不支持WebSocket");
         }else {
-            // console.log("您的浏览器支持WebSocket");
             var userId = document.getElementById('userId').value;
             var contentText = document.getElementById('contentText').value;
             var msg = '{"UserId":"'+userId+'","contentText":"'+contentText+'"}';
             console.log(msg);
             socket.send(msg);
-            //$("#contentText").val("");
         }
     }
     </script>

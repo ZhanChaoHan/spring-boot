@@ -15,8 +15,8 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author zhanchaohan
  * 
  */
-@ServerEndpoint( "/webSocket/{sid}" )
 @Component
+@ServerEndpoint( "/webSocket/{sid}" )
 public class WebSocketServer {
     //静态变量，用来记录当前在线连接数。应该把它设计成线程安全的。
     private static AtomicInteger onlineNum = new AtomicInteger ();
