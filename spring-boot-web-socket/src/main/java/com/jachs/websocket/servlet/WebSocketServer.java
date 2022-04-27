@@ -28,7 +28,6 @@ public class WebSocketServer {
     public void sendMessage ( Session session , String message ) throws IOException {
         if ( session != null ) {
             synchronized ( session ) {
-                //                System.out.println("发送数据：" + message);
                 session.getBasicRemote ().sendText ( message );
             }
         }

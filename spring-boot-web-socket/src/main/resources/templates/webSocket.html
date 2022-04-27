@@ -1,18 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html  lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>WebSocket</title>
-
+	<base th:href="${#request.getContextPath()}+'/'">
 </head>
 <body>
-<h3>hello socket</h3>
-<p>【userId】：<div><input id="userId" name="userId" type="text" value="10"></div>
-<p>【toUserId】：<div><input id="toUserId" name="toUserId" type="text" value="20"></div>
-<p>【toUserId】：<div><input id="contentText" name="contentText" type="text" value="hello websocket"></div>
-<p>操作:<div><a onclick="openSocket()">开启socket</a></div>
-<p>【操作】：<div><a onclick="sendMessage()">发送消息</a></div>
+<div id="infoDiv" >
+	
+</div>
+<div>
+	<h3>hello socket</h3>
+	<p>【userId】：<div><input id="userId" name="userId" type="text" value="jachs"></div>
+	<p>【toUserId】：<div><input id="contentText" name="contentText" type="text" value="hello websocket"></div>
+	<p>操作:<div><button onclick="openSocket()">开启socket</button></div>
+	<p>【操作】：<div><button onclick="sendMessage()">发送消息</button></div>
+</div>
 </body>
+<script th:src="@{/jquery.min.js}"></script>
 <script>
     var socket;
     function openSocket() {
@@ -22,8 +27,7 @@
             console.log("您的浏览器支持WebSocket");
             //实现化WebSocket对象，指定要连接的服务器地址与端口  建立连接
             var userId = document.getElementById('userId').value;
-            // var socketUrl="ws://127.0.0.1:22599/webSocket/"+userId;
-            var socketUrl="ws://127.0.0.1:8080/webSocket/"+userId;
+            var socketUrl="ws://127.0.0.1:8089/webSocket/"+userId;
             console.log(socketUrl);
             if(socket!=null){
                 socket.close();
@@ -39,6 +43,7 @@
             socket.onmessage = function(msg) {
                 var serverMsg = "收到服务端信息：" + msg.data;
                 console.log(serverMsg);
+                $("#infoDiv").append("<p>"+serverMsg+"</p>");
                 //发现消息进入    开始处理前端触发逻辑
             };
             //关闭事件
@@ -56,13 +61,13 @@
             console.log("您的浏览器不支持WebSocket");
         }else {
             // console.log("您的浏览器支持WebSocket");
-            var toUserId = document.getElementById('toUserId').value;
+            var userId = document.getElementById('userId').value;
             var contentText = document.getElementById('contentText').value;
-            var msg = '{"toUserId":"'+toUserId+'","contentText":"'+contentText+'"}';
+            var msg = '{"UserId":"'+userId+'","contentText":"'+contentText+'"}';
             console.log(msg);
             socket.send(msg);
+            //$("#contentText").val("");
         }
     }
-
     </script>
 </html>
