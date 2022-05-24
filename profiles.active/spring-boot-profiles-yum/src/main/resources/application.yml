@@ -1,0 +1,4 @@
+#注意空格规范
+spring:
+ profiles:
+  active: prod
