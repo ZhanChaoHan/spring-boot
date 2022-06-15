@@ -1,8 +1,6 @@
 package com.jachs.spring.boot.profiles;
 
 import java.util.Map;
-import java.util.Properties;
-import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,6 +11,11 @@ import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.MutablePropertySources;
 
 
+/***
+ * 
+ * @author zhanchaohan
+ *
+ */
 @SpringBootTest
 class SpringBootProfilesApplicationTests {
 	@Value("${name}")
@@ -59,6 +62,7 @@ class SpringBootProfilesApplicationTests {
 		
 		System.out.println("PropertySources-------------------------------------");
 		mps.forEach(a->{
+			
 			System.out.println(a);
 		});
 		System.out.println("SystemEnvironment-------------------------------------");
