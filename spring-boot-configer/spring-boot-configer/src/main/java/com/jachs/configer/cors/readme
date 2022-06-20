@@ -1,0 +1,9 @@
+java解决CORS跨域请求的方式
+
+对于CORS的跨域请求，主要有以下几种方式可供选择：
+    返回新的CorsFilter
+    重写 WebMvcConfigurer
+    使用注解 @CrossOrigin
+    手动设置响应头 (HttpServletResponse)
+    自定web filter 实现跨域
+————————————————
